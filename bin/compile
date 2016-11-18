@@ -86,6 +86,10 @@ mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
 
+#move saml things
+mkdir -p $CACHE_DIR/simplesamlphp
+cp $LP_DIR/test.txt $CACHE_DIR/simplesamlphp/test.txt
+
 # keep Procfile
 if [ -f www/Procfile ]; then
   mv www/Procfile .
