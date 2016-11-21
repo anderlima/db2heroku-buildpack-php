@@ -79,7 +79,6 @@ function download_and_install_ibm_db() {
 # include .files when moving things around
 shopt -s dotglob
 
-cd /app/www
 ln -s ../simplesamlphp/www simplesaml
 
 cd $BUILD_DIR
