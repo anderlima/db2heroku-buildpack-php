@@ -65,7 +65,7 @@ function download_and_install_ibm_db() {
 
   ln -s $BUILD_DIR/php /app/php
   ln -s $BUILD_DIR/vendor /app/vendor
-  ln -s /app/www/simplesamlphp/www simplesaml
+
 
   export PATH=$BUILD_DIR/autoconf/bin:/app/php/bin:$PATH
   export IBM_DB_HOME=$BUILD_DIR/clidriver
@@ -86,10 +86,6 @@ cd $BUILD_DIR
 mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
-
-#move saml things
-mkdir -p $CACHE_DIR/simplesamlphp
-cp $LP_DIR/test.txt $CACHE_DIR/simplesamlphp/test.txt
 
 # keep Procfile
 if [ -f www/Procfile ]; then
@@ -160,5 +156,7 @@ EOF
 
 chmod +x boot.sh
 
+cd /app/www
+ln -s ../simplesamlphp/www simplesaml
 # clean the cache
 #rm -rf $CACHE_DIR
