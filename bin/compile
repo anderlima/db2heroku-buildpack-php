@@ -65,7 +65,7 @@ function download_and_install_ibm_db() {
 
   ln -s $BUILD_DIR/php /app/php
   ln -s $BUILD_DIR/vendor /app/vendor
-  ln -s /app/www/simplesamlphp/www simplesaml
+  mv /app/www/simplesamlphp/www simplesaml
 
   export PATH=$BUILD_DIR/autoconf/bin:/app/php/bin:$PATH
   export IBM_DB_HOME=$BUILD_DIR/clidriver
