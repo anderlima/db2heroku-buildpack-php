@@ -158,5 +158,7 @@ chmod +x boot.sh
 
 cd /app/www
 ln -s ../simplesamlphp/www simplesaml
+
+cd $BUILD_DIR
 # clean the cache
 #rm -rf $CACHE_DIR
